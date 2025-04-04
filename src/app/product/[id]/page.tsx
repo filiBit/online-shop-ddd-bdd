@@ -2,6 +2,35 @@ import { notFound } from "next/navigation";
 import { createContainer } from "@/config/container";
 import { Gallery } from "@/components/gallery";
 import { ProductAttribute } from "@/components/product-atribute";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+    const { id } = await params;
+
+    const { productService } = createContainer();
+    const product = await productService.getProduct(Number(id));
+
+    if (!product) notFound();
+
+    return {
+        title: product.title,
+        description: product.description,
+        keywords: [
+            product.category,
+            product.brand,
+            product.collection,
+            product.material,
+            product.salePrice ? "sale" : "",
+        ].filter((k) => !!k),
+        openGraph: {
+            images: product.imageSrcs,
+        },
+    };
+}
 
 export default async function ProductPage({
     params,
