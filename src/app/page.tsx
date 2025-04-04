@@ -62,9 +62,8 @@ export default async function Home({
                 </details>
                 <PaginationBar
                     pagination={pagination}
-                    setPagination={() => {
-                        console.log("Click");
-                    }}
+                    filterSet={filterSet}
+                    sort={sort}
                     totalItemCount={total}
                 />
             </div>
@@ -81,9 +80,8 @@ export default async function Home({
             <div className="flex justify-end">
                 <PaginationBar
                     pagination={pagination}
-                    setPagination={() => {
-                        console.log("click");
-                    }}
+                    filterSet={filterSet}
+                    sort={sort}
                     totalItemCount={total}
                 />
             </div>
