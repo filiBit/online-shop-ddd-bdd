@@ -20,7 +20,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} flex w-[100%] flex-col items-center gap-16 p-[24px] pb-20 font-[family-name:var(--font-geist-sans)] antialiased sm:p-20`}
+                className={`${geistSans.variable} ${geistMono.variable} flex w-[100%] flex-col items-center gap-16 p-[16px] pb-20 font-[family-name:var(--font-geist-sans)] antialiased lg:p-[24px]`}
             >
                 <header className="flex w-[100%] items-center border-b">
                     <div className="bold px-[16px] text-xl">Store</div>
