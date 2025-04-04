@@ -80,6 +80,13 @@ export async function SearchOptions({ pagination, filterSet, sort }: Props) {
                         name="page"
                         defaultValue={pagination.index + 1}
                     ></input>
+                    <input
+                        hidden
+                        name="sort"
+                        defaultValue={
+                            !sort ? "" : `${sort?.fieldName},${sort?.order}`
+                        }
+                    ></input>
                     <button
                         type="submit"
                         className="h-40px cursor-pointer rounded-sm border bg-neutral-100 px-[8px] hover:brightness-90"
