@@ -5,5 +5,9 @@ interface Props {
 }
 
 export function ProductAttribute({ children }: Props) {
-    return <div className="min-w-[160px]">{children}</div>;
+    return (
+        <div role="listitem" className="min-w-[160px]">
+            {children}
+        </div>
+    );
 }

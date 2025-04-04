@@ -73,9 +73,10 @@ export function PaginationBar({
     );
 
     return (
-        <div className="flex">
+        <div role="toolbar" className="flex">
             <Link
                 href={`/?${productService.makeQuerySegment2({ pagination: new Pagination(pagination.index > 1 ? pagination.index - 1 : pagination.index), filterSet, sort })}`}
+                role="button"
                 className={`h-[40px]hover:bg-neutral-100 flex w-[40px] cursor-pointer items-center justify-center rounded-tl-sm rounded-bl-sm border border-r-0 border-neutral-700 text-neutral-700`}
             >
                 &lt;
@@ -84,6 +85,7 @@ export function PaginationBar({
                 <Link
                     key={x.id}
                     href={`/?${productService.makeQuerySegment2({ pagination: new Pagination(x.value ? x.value - 1 : pagination.index), filterSet, sort })}`}
+                    role="button"
                     className={`flex h-[40px] w-[40px] items-center justify-center border border-r-0 border-neutral-700 text-neutral-700 ${
                         x.value === pagination.index + 1
                             ? "bg-sky-100 text-sky-800 hover:bg-sky-200"
@@ -95,6 +97,7 @@ export function PaginationBar({
             ))}
             <Link
                 href={`/?${productService.makeQuerySegment2({ pagination: new Pagination(pagination.index + 1 < totalPages ? pagination.index + 1 : pagination.index), filterSet, sort })}`}
+                role="button"
                 className={`flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-tr-sm rounded-br-sm border border-neutral-700 text-neutral-700 hover:bg-neutral-100`}
             >
                 &gt;

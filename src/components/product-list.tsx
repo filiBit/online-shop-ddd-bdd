@@ -8,11 +8,12 @@ interface Props {
 
 export function ProductList({ products }: Props) {
     return (
-        <div className="flex flex-wrap gap-[16px]">
+        <div role="list" className="flex flex-wrap gap-[16px]">
             {products.map((p) => (
                 <Link
                     key={p.id}
                     href={`/product/${p.id}`}
+                    role="listitem"
                     className="block w-[14%] min-w-[200px] shrink grow"
                 >
                     <ProductCard product={p} isPreview />

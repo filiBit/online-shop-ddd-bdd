@@ -10,7 +10,7 @@ interface Props {
 export function Gallery({ imageSrcs }: Props) {
     const [activeSrc, setActiveSrc] = useState<string>(imageSrcs[0]);
     return (
-        <div className="flex flex-col justify-start xl:flex-row">
+        <div role="figure" className="flex flex-col justify-start xl:flex-row">
             <div className="w-[100%] border-b xl:border-r xl:border-b-0">
                 <Image
                     src={activeSrc}

@@ -27,6 +27,7 @@ export async function SearchOptions({ pagination, filterSet, sort }: Props) {
                             filterSet,
                             sort: new SortOption("sale_price", "asc"),
                         })}`}
+                        role="button"
                         className={`block flex h-[32px] items-center justify-center rounded-sm border bg-neutral-100 px-[8px] text-sm hover:brightness-90 ${
                             sort?.order === "asc"
                                 ? "border-sky-800 bg-sky-800 text-white"
@@ -41,6 +42,7 @@ export async function SearchOptions({ pagination, filterSet, sort }: Props) {
                             filterSet,
                             sort: new SortOption("sale_price", "desc"),
                         })}`}
+                        role="button"
                         className={`block flex h-[32px] items-center justify-center rounded-sm border bg-neutral-100 px-[8px] text-sm hover:brightness-90 ${
                             sort?.order === "desc"
                                 ? "border-sky-800 bg-sky-800 text-white"
@@ -55,6 +57,7 @@ export async function SearchOptions({ pagination, filterSet, sort }: Props) {
                                 pagination,
                                 filterSet,
                             })}`}
+                            role="button"
                             className={`block flex h-[32px] items-center justify-center rounded-sm border bg-neutral-100 px-[8px] hover:brightness-90`}
                         >
                             Clear
@@ -64,7 +67,7 @@ export async function SearchOptions({ pagination, filterSet, sort }: Props) {
             </div>
             <div>
                 <span className="mb-[8px] block text-lg">Search</span>
-                <form className="flex gap-[8px]">
+                <form role="search" className="flex gap-[8px]">
                     <input
                         name="title"
                         defaultValue={filterSet.getFilter("title")?.value ?? ""}
@@ -97,7 +100,10 @@ export async function SearchOptions({ pagination, filterSet, sort }: Props) {
             </div>
             <div>
                 <span className="mb-[8px] block text-lg">Categories</span>
-                <ul className="flex flex-col items-start gap-[8px]">
+                <ul
+                    role="radiogroup"
+                    className="flex flex-col items-start gap-[8px]"
+                >
                     {categories.map((c) => {
                         const newFilterSet = new FilterSet(filterSet.filters);
                         const newFilter = new Filter("category", c);
@@ -114,6 +120,7 @@ export async function SearchOptions({ pagination, filterSet, sort }: Props) {
                                     filterSet: newFilterSet,
                                     sort,
                                 })}`}
+                                role="radio"
                                 className={`h-[32px] content-center rounded-xs px-2 hover:brightness-90 ${
                                     filterSet.getFilter("category")?.value === c
                                         ? "bg-sky-800 text-white"

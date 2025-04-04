@@ -12,7 +12,7 @@ export function ProductCard({ product, isPreview }: Props) {
             className="group flex h-[320px] shrink cursor-pointer flex-col justify-between gap-[16px] rounded-sm border p-[16px] select-none hover:scale-[1.02] hover:shadow-md"
             title={product.title}
         >
-            <div className="flex h-[100%] items-center">
+            <div role="figure" className="flex h-[100%] items-center">
                 <Image
                     draggable={false}
                     src={product.imageSrcs[0]}

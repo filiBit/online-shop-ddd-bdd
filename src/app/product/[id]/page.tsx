@@ -59,7 +59,10 @@ export default async function ProductPage({
                 </div>
                 <div className="flex flex-col items-start gap-[32px]">
                     <p>{product.description}</p>
-                    <div className="flex flex-wrap justify-between gap-[32px]">
+                    <div
+                        role="list"
+                        className="flex flex-wrap justify-between gap-[32px]"
+                    >
                         <ProductAttribute>
                             Brand: <strong>{product.brand || "-"}</strong>
                         </ProductAttribute>

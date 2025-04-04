@@ -42,6 +42,7 @@ export default async function Home({
             <div className="flex flex-wrap justify-between gap-[32px] xl:justify-end">
                 <details className="static rounded-sm open:w-[100%] xl:hidden">
                     <summary
+                        role="button"
                         className={`h-[40px] w-fit cursor-pointer content-center items-center justify-center rounded-sm border px-[8px] select-none ${
                             !filterSet.isEmpty || !!sort
                                 ? "bg-sky-800 text-white"
