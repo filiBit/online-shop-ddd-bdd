@@ -27,3 +27,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ```bash
 npm run test
 ```
+
+## Preview
+
+### Home page
+
+![Home page](preview-home-page.png)
+
+### Product page
+
+![Product page](preview-product-page.png)
