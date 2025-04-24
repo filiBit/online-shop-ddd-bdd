@@ -13,8 +13,6 @@ export class ProductService {
     mapSearchParams(searchParams: {
         [key: string]: string | string[] | undefined;
     }) {
-        console.log("MAPPING");
-        console.log(searchParams);
         const { page, title, category, sort } = searchParams;
 
         const pagination = new Pagination(Number(page) - 1);
@@ -39,8 +37,6 @@ export class ProductService {
 
         let sortOption;
         try {
-            console.log("SORT");
-            console.log(sort);
             sortOption = new SortOption(
                 // @ts-expect-error - Validation done within
                 ...sort.split(","),
@@ -48,7 +44,6 @@ export class ProductService {
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (_) {
         }
-        console.log(filterSet);
 
         return { pagination, filterSet, sort: sortOption };
     }
